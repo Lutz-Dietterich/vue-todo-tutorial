@@ -22,7 +22,3 @@ pnpm-debug.log*
 *.sln
 *.sw?
 
-# Mac system files
-.DS_Store
-.AppleDouble
-.LSOverride
