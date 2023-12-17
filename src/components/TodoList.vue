@@ -1,24 +1,23 @@
 <template>
-  <div>
-    <h1>{{ message.toUpperCase() }}</h1>
-    <h1>{{ count }}</h1>
-    <button @click="countUp">Hochzählen</button>
+  <div class="px-2 py-1 flex justify-between items-center" @click="logindex()">
+    <h1 class="p-1 cursor-pointer" :class="{'line-through font-thin': this.todo.done}">{{ todo.todo }}</h1>
+    <button class="hover:scale-110"><img src="../assets/delete.png" alt="delete Todo"></button>
   </div>
 </template>
 
 <script>
 export default {
   name: 'TodoList',
+  props: ["todoprop", "todoindex"],
   data() {
     return {
-      message: "HellO World",
-      count: 0,
+      todo: this.todoprop,
     };
   },
   methods: {
-    countUp() {
-      this.count++;
-    },
+    logindex() {
+    console.log(this.todoindex)
+    }
   },
 };
 </script>
