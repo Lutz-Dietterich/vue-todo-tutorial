@@ -1,7 +1,7 @@
 <template>
   <div class="bg-green-400 h-screen m-0 p-10">
     <article class="bg-gray-600/60 text-white w-1/2 m-auto mt-12 rounded-lg hover:shadow-lg shadow shadow-gray-800">
-        <section class=" text-center py-5 mb-5 border-b-2 border-blacks">
+      <section class="text-center py-5 mb-5" :class="{'border-b-2 border-black': openTodos.length > 0}">
           <h1 class="text-3xl py-4 flex justify-center gap-3">
             <img class="flex justify-end" src="./assets/checklist.png" alt="">Todo's
           </h1>
@@ -12,7 +12,7 @@
             Alles erledigt! 
           </p>
           <div class="flex justify-center bg-white w-4/5 mx-auto mt-5 rounded-full">
-            <input type="text" required @keyup.enter="addTodo" class=" w-4/5 rounded-l-full text-gray-800 py-0.5 px-3" v-model="newTodo"/>
+            <input type="text" placeholder="Erstelle eine Todo" @keyup.enter="addTodo" class=" w-4/5 rounded-l-full text-gray-800 py-0.5 px-3" v-model="newTodo"/>
             <button class="bg-slate-500 w-1/5 rounded-r-full flex justify-center" @click="addTodo"><img class="self-center" src="./assets/add.png" alt=""></button>
           </div>
         </section>
